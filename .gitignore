@@ -1,0 +1,9 @@
+./Terny
+./**/node_modules
+./Plearnium/Plearnium/game
+./PlearniumGame
+.**/node_modules
+./node_modules
+
+node_modules
+Terny/Terny/Logs/ApiUpdaterCheck.txt

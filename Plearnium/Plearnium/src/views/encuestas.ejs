@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Configuración | Plearnium</title>
+        <link rel="shortcut icon" type="image" href="img/master_terny.png">
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="iniciar_sesion">CERRAR SESIÓN</a></li>
+                </ul>
+            </nav>
+            <div class="navbar">
+                <a href="https://mx.ternium.com/es" target="_blank"><img src="img/logo.png" class="logo"></a>
+                <nav>
+                    <ul>
+                        <li><a href="inicio">INICIO</a></li>
+                        <li><a href="juego">JUEGO</a></li>
+                        <li><a href="sobre_ternium">SOBRE TERNIUM</a></li>
+                        <li><a href="proceso">PROCESO</a></li>
+                        <li><a href="creadores">CREADORES</a></li>
+                        <li><a href="feedback">FEEDBACK</a></li>
+                        <li><a href="ranking">RANKING</a></li>
+                        <li><a href="agregarRespuesta">ENCUESTAS</a></li>
+                    </ul>
+                </nav>
+            </div>
+        
+            <div class="bg-img">
+               
+                <div class="content">
+                    <header>Agregar Encuesta</header>
+                    <form name="encuesta" action="/encuestas" method="POST">
+                        <div class="field">
+                            <span></span>
+                            <input type="text" name ="pregunta" required placeholder="Encuesta" >
+                        </div>
+                        <div class="field space">
+                            <input type="submit" value="Submit">
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+            <div class="bg-img">
+                <table>
+                    <thead>
+                            <th>Pregunta</th>
+                            <th>Respuesta</th>
+                            
+                        </thead>
+                </table>
+                <% respuestas.forEach(function(respuesta, index){ %>
+                    <div class="row">
+                        <div class="col">
+                            <%-  respuesta.PreguntaEncuesta%>
+                        </div>
+                        <div class="col">
+                            <%- respuesta.RespuestaEncuesta %>
+                        </div>
+                    </div>  
+                <% })%>
+            </div>
+        </div>
+    </body>
+</html>
